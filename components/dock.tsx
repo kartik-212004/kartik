@@ -109,7 +109,7 @@ export function DockDemo() {
     setTheme(isDark ? "light" : "dark");
   };
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-4">
       <TooltipProvider>
         <Dock direction="middle" className="dark:bg-[#131415]">
           {DATA.navbar.map((item) => (

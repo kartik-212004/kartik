@@ -22,7 +22,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col h-screen p-4">
+          <div className="flex flex-col max-w-screen-md mx-auto mt-20  h-screen p-4">
             {children}
             <DockDemo />
           </div>
