@@ -174,7 +174,7 @@ export function DockDemo() {
                       "size-10 sm:size-12 rounded-full"
                     )}
                   >
-                    <item.icon className="size-3 sm:size-4" />
+                    <item.icon className="size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -193,14 +193,14 @@ export function DockDemo() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 sm:size-12 rounded-full"
+                      "size-12 rounded-full"
                     )}
                   >
-                    <social.icon className="size-3 sm:size-4" />
+                    <social.icon className="size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="text-xs sm:text-sm">{name}</p>
+                  <p className="text-sm">{name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -213,17 +213,17 @@ export function DockDemo() {
                   pressed={isDark}
                   onPressedChange={handleToggle}
                   aria-label="Toggle dark/light mode"
-                  className="size-10 sm:size-12 rounded-full"
+                  className="size-12 rounded-full"
                 >
                   {isDark ? (
-                    <SunMoon className="size-3 sm:size-4" />
+                    <SunMoon className="size-4" />
                   ) : (
-                    <Sun className="size-3 sm:size-4" />
+                    <Sun className="size-4" />
                   )}
                 </Toggle>
               </TooltipTrigger>
               <TooltipContent>
-                <p className="text-xs sm:text-sm">Theme</p>
+                <p className="text-sm">Theme</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
