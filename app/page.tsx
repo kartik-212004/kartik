@@ -136,7 +136,6 @@ export default function Home() {
           {isMounted && (
             <GitHubCalendar
               username="kartik-212004"
-              width="100%"
               fontSize={calendarFontSize}
             />
           )}
