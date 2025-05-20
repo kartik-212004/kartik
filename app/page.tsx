@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Experience from "@/components/experience";
-import { motion, } from "framer-motion";
+import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
