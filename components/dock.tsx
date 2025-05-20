@@ -171,14 +171,14 @@ export function DockDemo() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 sm:size-12 rounded-full"
+                      "text-lg rounded-full"
                     )}
                   >
                     <item.icon className="size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="text-xs sm:text-sm">{item.label}</p>
+                  <p className="text-lg">{item.label}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -200,7 +200,7 @@ export function DockDemo() {
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="text-sm">{name}</p>
+                  <p className="text-lg">{name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -223,7 +223,7 @@ export function DockDemo() {
                 </Toggle>
               </TooltipTrigger>
               <TooltipContent>
-                <p className="text-sm">Theme</p>
+                <p className="text-lg">Theme</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
