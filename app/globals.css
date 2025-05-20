@@ -178,4 +178,9 @@ body:not(:hover)::-webkit-scrollbar-thumb {
   --color-primary2: #e7e7e7;
   --color-text2: #6d6d6d;
   --color-text1: #d1d1d1;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h1: 48px;
+  --text-h4: 14px;
+  --text-xm: 12px;
 }
