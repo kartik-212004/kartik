@@ -8,7 +8,6 @@ import {
   PencilIcon,
   Sun,
   SunMoon,
-  FileBox,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -62,7 +61,49 @@ const Icons = {
       <path d="M29.41,9.26a3.5,3.5,0,0,0-2.47-2.47C24.76,6.2,16,6.2,16,6.2s-8.76,0-10.94.59A3.5,3.5,0,0,0,2.59,9.26,36.13,36.13,0,0,0,2,16a36.13,36.13,0,0,0,.59,6.74,3.5,3.5,0,0,0,2.47,2.47C7.24,25.8,16,25.8,16,25.8s8.76,0,10.94-.59a3.5,3.5,0,0,0,2.47-2.47A36.13,36.13,0,0,0,30,16,36.13,36.13,0,0,0,29.41,9.26ZM13.2,20.2V11.8L20.47,16Z" />
     </svg>
   ),
-  resume: () => <FileBox className="size-5" />,
+  resume: (props: IconProps) => (
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <title>Resume</title>
+      <path
+        fill="currentColor"
+        d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"
+      />
+      <polyline
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        points="14 2 14 8 20 8"
+      />
+      <line
+        x1="8"
+        y1="13"
+        x2="16"
+        y2="13"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="8"
+        y1="17"
+        x2="16"
+        y2="17"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <line
+        x1="8"
+        y1="9"
+        x2="10"
+        y2="9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
   github: (props: IconProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
@@ -116,10 +157,11 @@ export function DockDemo() {
   const handleToggle = () => {
     setTheme(isDark ? "light" : "dark");
   };
+
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-2 sm:pb-4">
       <TooltipProvider>
-        <Dock direction="middle" className="dark:bg-[#131415]">
+        <Dock direction="middle" className="dark:bg-[#131415] scale-75 sm:scale-90 md:scale-100">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -129,14 +171,14 @@ export function DockDemo() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 sm:size-12 rounded-full"
                     )}
                   >
-                    <item.icon className="size-4" />
+                    <item.icon className="size-3 sm:size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{item.label}</p>
+                  <p className="text-xs sm:text-sm">{item.label}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -151,14 +193,14 @@ export function DockDemo() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-10 sm:size-12 rounded-full"
                     )}
                   >
-                    <social.icon className="size-4" />
+                    <social.icon className="size-3 sm:size-4" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{name}</p>
+                  <p className="text-xs sm:text-sm">{name}</p>
                 </TooltipContent>
               </Tooltip>
             </DockIcon>
@@ -171,16 +213,17 @@ export function DockDemo() {
                   pressed={isDark}
                   onPressedChange={handleToggle}
                   aria-label="Toggle dark/light mode"
+                  className="size-10 sm:size-12 rounded-full"
                 >
                   {isDark ? (
-                    <SunMoon className="size-4" />
+                    <SunMoon className="size-3 sm:size-4" />
                   ) : (
-                    <Sun className="size-4" />
+                    <Sun className="size-3 sm:size-4" />
                   )}
                 </Toggle>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Theme</p>
+                <p className="text-xs sm:text-sm">Theme</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>

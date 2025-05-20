@@ -12,6 +12,7 @@ export default function ExampleAccordion() {
       <AccordionItem value="item-1">
         <AccordionTrigger>
           <motion.p
+            className="text-sm sm:text-base"
             whileHover={{
               x: [0, -2, 2, -2, 2, 0],
               transition: {
@@ -24,7 +25,7 @@ export default function ExampleAccordion() {
             Worked As a frontend dev in the organisation
           </motion.p>
         </AccordionTrigger>
-        <AccordionContent className="text-md">
+        <AccordionContent className="text-xs sm:text-sm md:text-md">
           <p>
             I worked as a frontend developer in the organisation for 2 years. I
             was responsible for the frontend of the organisation. I was
@@ -38,6 +39,7 @@ export default function ExampleAccordion() {
       <AccordionItem value="item-2">
         <AccordionTrigger>
           <motion.p
+            className="text-sm sm:text-base"
             whileHover={{
               x: [0, -2, 2, -2, 2, 0],
               transition: {
@@ -50,7 +52,7 @@ export default function ExampleAccordion() {
             Is it styled?
           </motion.p>
         </AccordionTrigger>
-        <AccordionContent className="text-md">
+        <AccordionContent className="text-xs sm:text-sm md:text-md">
           <p>
             Yes. It comes with default styles that matches the other
             components&apos; aesthetic.

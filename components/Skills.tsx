@@ -87,6 +87,7 @@ export function Frontend() {
         <AccordionItem value="item-2">
           <AccordionTrigger>
             <motion.p
+              className="text-sm sm:text-base"
               whileHover={{
                 x: [0, -2, 2, -2, 2, 0],
                 transition: {
@@ -99,15 +100,17 @@ export function Frontend() {
               Frontend
             </motion.p>
           </AccordionTrigger>
-          <AccordionContent className="text-md flex flex-row gap-2">
-            {frontend.map((skill, i) => (
-              <p
-                key={i}
-                className="text-sm text-black flex flex-row gap-2 dark:bg-primary2 px-2 py-1 rounded-md"
-              >
-                {skill.name}
-              </p>
-            ))}
+          <AccordionContent className="text-xs sm:text-sm md:text-md">
+            <div className="flex flex-wrap gap-1 sm:gap-2">
+              {frontend.map((skill, i) => (
+                <p
+                  key={i}
+                  className="text-xs sm:text-sm text-black flex flex-row gap-1 sm:gap-2 dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
+                >
+                  {skill.name}
+                </p>
+              ))}
+            </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
@@ -121,6 +124,7 @@ export function Backend() {
         <AccordionItem value="item-2">
           <AccordionTrigger>
             <motion.p
+              className="text-sm sm:text-base"
               whileHover={{
                 x: [0, -2, 2, -2, 2, 0],
                 transition: {
@@ -133,15 +137,17 @@ export function Backend() {
               Backend
             </motion.p>
           </AccordionTrigger>
-          <AccordionContent className="text-md flex flex-row gap-2">
-            {backend.map((skill, i) => (
-              <p
-                key={i}
-                className="text-sm text-black flex flex-row gap-2 dark:bg-primary2 px-2 py-1 rounded-md"
-              >
-                {skill.name}
-              </p>
-            ))}
+          <AccordionContent className="text-xs sm:text-sm md:text-md">
+            <div className="flex flex-wrap gap-1 sm:gap-2">
+              {backend.map((skill, i) => (
+                <p
+                  key={i}
+                  className="text-xs sm:text-sm text-black flex flex-row gap-1 sm:gap-2 dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
+                >
+                  {skill.name}
+                </p>
+              ))}
+            </div>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
