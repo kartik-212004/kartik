@@ -21,21 +21,21 @@ export default function Home() {
       <motion.h1
         variants={fadeUp}
         transition={{ duration: 1 }}
-        className="text-h1 font-bold"
+        className="text-h2 font-bold"
       >
         Kartik Bhatt
       </motion.h1>
 
       <motion.h2
         variants={fadeUp}
-        transition={{ duration: 1, delay: 0.2 }}
+        transition={{ duration: 0.8 }}
         className="text-lg py-1 font-medium dark:text-text1 text-text2"
       >
         I write bugs and call them features.
       </motion.h2>
 
       <motion.div variants={fadeUp} transition={{ delay: 0.3 }}>
-        <h2 className="text-lg py-1 font-semibold">Who Am I?</h2>
+        <h2 className="text-lg py-1 font-semibold">Who Am I ?</h2>
         <p className="text-h4 leading-7  tracking-widest dark:text-text1 text-text2">
           Hi, I&apos;m Kartik Bhatt. I&apos;m a full-stack developer with a
           strong foundation in the MERN stack and experience across various
@@ -45,7 +45,7 @@ export default function Home() {
       </motion.div>
 
       <motion.div variants={fadeUp} transition={{ delay: 0.4 }}>
-        <h2 className="text-lg py-1 font-semibold">Education</h2>
+        <h2 className="text-lg py-2 font-semibold">Education</h2>
         <div className="flex flex-row gap-2 justify-between items-center">
           <span className="flex py-2 flex-row gap-4 justify-center items-center">
             <Image src="/logo.png" alt="utu" width={50} height={50} />
@@ -90,6 +90,19 @@ export default function Home() {
           <Backend />
         </motion.div>
       </motion.div>
+
+      <motion.div
+        variants={fadeUp}
+        whileHover={{
+          x: [0, -2, 2, -2, 2, 0],
+          transition: {
+            duration: 0.2,
+            repeat: Infinity,
+            repeatType: "loop",
+          },
+        }}
+        className="w-20 h-1 mx-auto bg-white rounded-full "
+      ></motion.div>
     </motion.main>
   );
 }

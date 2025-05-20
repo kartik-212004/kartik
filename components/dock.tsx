@@ -1,12 +1,14 @@
 "use client";
 
 import {
+  // FileBoxIcon,
   CalendarIcon,
   HomeIcon,
   MailIcon,
   PencilIcon,
   Sun,
   SunMoon,
+  FileBox,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -60,6 +62,7 @@ const Icons = {
       <path d="M29.41,9.26a3.5,3.5,0,0,0-2.47-2.47C24.76,6.2,16,6.2,16,6.2s-8.76,0-10.94.59A3.5,3.5,0,0,0,2.59,9.26,36.13,36.13,0,0,0,2,16a36.13,36.13,0,0,0,.59,6.74,3.5,3.5,0,0,0,2.47,2.47C7.24,25.8,16,25.8,16,25.8s8.76,0,10.94-.59a3.5,3.5,0,0,0,2.47-2.47A36.13,36.13,0,0,0,30,16,36.13,36.13,0,0,0,29.41,9.26ZM13.2,20.2V11.8L20.47,16Z" />
     </svg>
   ),
+  resume: () => <FileBox className="size-5" />,
   github: (props: IconProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
@@ -87,6 +90,11 @@ const DATA = {
         url: "https://www.linkedin.com/in/kartik212004/",
         icon: Icons.linkedin,
       },
+      Resume: {
+        name: "Resume",
+        url: "/resume.pdf",
+        icon: Icons.resume,
+      },
       X: {
         name: "X",
         url: "https://x.com/kartikbht",
@@ -109,7 +117,7 @@ export function DockDemo() {
     setTheme(isDark ? "light" : "dark");
   };
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-4">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-2 sm:pb-4">
       <TooltipProvider>
         <Dock direction="middle" className="dark:bg-[#131415]">
           {DATA.navbar.map((item) => (
