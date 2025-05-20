@@ -6,16 +6,15 @@ import dynamic from "next/dynamic";
 import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
 
-const GitHubCalendar = dynamic(
-  () => import("react-github-calendar"),
-  { ssr: false }
-);
+const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
+  ssr: false,
+});
 
 const blurReveal = {
   hidden: {
     opacity: 0,
     y: 50,
-    filter: "blur(8px)"
+    filter: "blur(8px)",
   },
   visible: {
     opacity: 1,
@@ -23,9 +22,9 @@ const blurReveal = {
     filter: "blur(0px)",
     transition: {
       duration: 0.8,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 export default function Home() {
@@ -47,15 +46,13 @@ export default function Home() {
 
     updateFontSize();
 
-    window.addEventListener('resize', updateFontSize);
+    window.addEventListener("resize", updateFontSize);
 
-    return () => window.removeEventListener('resize', updateFontSize);
+    return () => window.removeEventListener("resize", updateFontSize);
   }, []);
 
   return (
-    <motion.main
-      className="flex flex-col space-y-4"
-    >
+    <motion.main className="flex flex-col space-y-4">
       <motion.h1
         initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -83,10 +80,17 @@ export default function Home() {
       >
         <h2 className="text-base sm:text-lg py-1 font-semibold">Who Am I ?</h2>
         <p className="text-sm sm:text-base md:text-h4 leading-6 sm:leading-7 tracking-wide sm:tracking-widest dark:text-text1 text-text2">
-          Hi, I&apos;m Kartik Bhatt. I&apos;m a full-stack developer with a
-          strong foundation in the MERN stack and experience across various
-          modern tools and technologies. I&apos;ve worked on several projects
-          ranging from SaaS platforms and multiplayer .
+          Hi, I’m Kartik Bhatt , a college student from Dehradun who loves
+          building cool stuff with code. Started coding in high school, built my
+          first site at 18, and never stopped since. Outside tech, I shitpost
+          online and binge watch planes on Flightradar24. I’ve done 5+
+          hackathons, shipped freelance projects, and believe in{" "}
+          <span className="text-white font-mono font-semibold">
+            #BuildInPublic
+          </span>
+          . Open to freelance work —{" "}
+          <span className="text-white font-mono font-semibold">Contact Me</span>
+          !
         </p>
       </motion.div>
 
@@ -100,9 +104,17 @@ export default function Home() {
         <h2 className="text-base sm:text-lg py-2 font-semibold">Education</h2>
         <div className="flex flex-row gap-2 justify-between items-center">
           <span className="flex py-2 flex-row gap-2 sm:gap-4 justify-center items-center">
-            <Image src="/logo.png" alt="utu" width={50} height={50} className="w-10 h-10 sm:w-[50px] sm:h-[50px]" />
+            <Image
+              src="/logo.png"
+              alt="utu"
+              width={50}
+              height={50}
+              className="w-10 h-10 sm:w-[50px] sm:h-[50px]"
+            />
             <div>
-              <p className="text-sm sm:text-base">Uttarakhand Technical University</p>
+              <p className="text-sm sm:text-base">
+                Uttarakhand Technical University
+              </p>
               <p className="text-[10px] sm:text-[12px] dark:text-text1 text-text2">
                 B.Tech in Computer Science and Engineering
               </p>
