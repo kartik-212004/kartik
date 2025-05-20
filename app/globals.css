@@ -41,8 +41,12 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+html,
 body {
   font-family: Satoshi-Regular;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 :root {
@@ -78,6 +82,11 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Custom scrollbar variables */
+  --scrollbar-thumb: rgba(0, 0, 0, 0.3);
+  --scrollbar-track: rgba(0, 0, 0, 0.1);
+  --scrollbar-width: 6px;
 }
 
 .dark {
@@ -112,6 +121,10 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Dark theme scrollbar variables */
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-track: rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
@@ -121,4 +134,48 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Hide scrollbar when not needed */
+::-webkit-scrollbar-thumb:vertical {
+  min-height: 30px;
+  display: var(--show-scrollbar, block);
+}
+
+body:not(:hover)::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+@theme {
+  --color-primary: #b0b0b0;
+  --color-primary2: #e7e7e7;
+  --color-text2: #6d6d6d;
+  --color-text1: #d1d1d1;
 }
