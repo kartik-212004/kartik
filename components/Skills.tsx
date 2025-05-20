@@ -73,6 +73,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
+import { motion } from "framer-motion";
 
 export function Frontend() {
   return (
@@ -85,7 +86,18 @@ export function Frontend() {
       >
         <AccordionItem value="item-2">
           <AccordionTrigger>
-            <p>Frontend</p>
+            <motion.p
+              whileHover={{
+                x: [0, -2, 2, -2, 2, 0],
+                transition: {
+                  duration: 0.3,
+                  repeat: 1,
+                  repeatType: "loop",
+                },
+              }}
+            >
+              Frontend
+            </motion.p>
           </AccordionTrigger>
           <AccordionContent className="text-md flex flex-row gap-2">
             {frontend.map((skill, i) => (
@@ -108,7 +120,18 @@ export function Backend() {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-2">
           <AccordionTrigger>
-            <p>Backend</p>
+            <motion.p
+              whileHover={{
+                x: [0, -2, 2, -2, 2, 0],
+                transition: {
+                  duration: 0.3,
+                  repeat: 1,
+                  repeatType: "loop",
+                },
+              }}
+            >
+              Backend
+            </motion.p>
           </AccordionTrigger>
           <AccordionContent className="text-md flex flex-row gap-2">
             {backend.map((skill, i) => (

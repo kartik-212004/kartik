@@ -1,17 +1,28 @@
 import {
+  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
+} from "@/components/ui/accordion";
+import { motion } from "framer-motion";
 
-import { Accordion } from "./ui/accordion";
-
-export default function Experience() {
+export default function ExampleAccordion() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>
-          <p>Worked As a frontend dev in the organisation</p>
+          <motion.p
+            whileHover={{
+              x: [0, -2, 2, -2, 2, 0],
+              transition: {
+                duration: 0.3,
+                repeat: 1,
+                repeatType: "loop",
+              },
+            }}
+          >
+            Worked As a frontend dev in the organisation
+          </motion.p>
         </AccordionTrigger>
         <AccordionContent className="text-md">
           <p>
@@ -23,9 +34,21 @@ export default function Experience() {
           </p>
         </AccordionContent>
       </AccordionItem>
+
       <AccordionItem value="item-2">
         <AccordionTrigger>
-          <p>Is it styled?</p>
+          <motion.p
+            whileHover={{
+              x: [0, -2, 2, -2, 2, 0],
+              transition: {
+                duration: 0.3,
+                repeat: 1,
+                repeatType: "loop",
+              },
+            }}
+          >
+            Is it styled?
+          </motion.p>
         </AccordionTrigger>
         <AccordionContent className="text-md">
           <p>
