@@ -53,13 +53,13 @@ export default function Home() {
 
   return (
     <motion.main className="flex flex-col space-y-4">
-      <div className="relative p-3 rounded-sm overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/image2.png')] bg-center bg-no-repeat brightness-90 bg-cover grayscale z-0" />
+      <div className="relative py-3 px-1 rounded-sm overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/image2.png')] bg-center brightness-75 contrast-[103%] bg-no-repeat bg-cover z-0" />
 
         <div className="relative z-10">
           <motion.h1
-            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1 }}
             className="text-3xl sm:text-4xl md:text-h2 font-bold"
           >
@@ -67,8 +67,8 @@ export default function Home() {
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8 }}
             className="text-base sm:text-lg py-1 font-medium dark:text-text1 text-text2"
           >
@@ -76,7 +76,6 @@ export default function Home() {
           </motion.h2>
         </div>
       </div>
-
 
       <motion.div
         ref={introRef}
