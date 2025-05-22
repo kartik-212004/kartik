@@ -119,7 +119,7 @@ export function Frontend() {
                     delay: Math.random() * 2,
                     ease: "easeOut",
                   }}
-                  className="text-xs sm:text-sm  text-black flex flex-row gap-2 dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
+                  className="text-xs sm:text-sm  text-black flex flex-row  dark:bg-primary2 px-1 sm:px-2 py-0.5  rounded-md"
                 >
                   {skill.name}
                 </motion.p>
@@ -169,7 +169,7 @@ export function Backend() {
                     delay: Math.random() * 2,
                     ease: "easeOut",
                   }}
-                  className="text-xs sm:text-sm text-black flex flex-row  dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
+                  className="text-xs sm:text-sm text-black flex flex-row  dark:bg-primary2 px-1 sm:px-2 py-0.5 rounded-md"
                 >
                   {skill.name}
                 </motion.p>
