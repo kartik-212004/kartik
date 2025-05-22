@@ -84,19 +84,19 @@ export default function Home() {
         viewport={{ once: true, margin: "-50px" }}
         variants={blurReveal}
       >
-        <h2 className="text-base sm:text-lg py-1 font-semibold">Who Am I ?</h2>
+        <h2 className="text-base sm:text-lg py-3 md:py-1 font-semibold">
+          Who Am I ?
+        </h2>
         <p className="text-sm sm:text-base md:text-h4 leading-6 sm:leading-7 tracking-wide sm:tracking-widest dark:text-text1 text-text2">
-          Hi, I’m Kartik Bhatt , a college student from Dehradun who loves
-          building cool stuff with code. Started coding in high school, built my
-          first site at 18, and never stopped since. Outside tech, I shitpost
-          online and binge watch planes on Flightradar24. I’ve done 5+
-          hackathons, shipped freelance projects, and believe in{" "}
+          I’m Kartik Bhatt, a student from Dehradun who loves building with
+          code. I’ve done 5+ hackathons, shipped freelance projects, and believe
+          in{" "}
           <span className="text-white font-mono font-semibold">
             #BuildInPublic
           </span>
-          . Open to freelance work —{" "}
-          <span className="text-white font-mono font-semibold">Contact Me</span>
-          !
+          . I also shitpost and binge planes on Flightradar24.{" "}
+          <span className="text-white font-mono font-semibold">Contact Me</span>{" "}
+          for freelance work!
         </p>
       </motion.div>
 
@@ -107,7 +107,9 @@ export default function Home() {
         viewport={{ once: true, margin: "-50px" }}
         variants={blurReveal}
       >
-        <h2 className="text-base sm:text-lg py-2 font-semibold">Education</h2>
+        <h2 className="text-base sm:text-lg py-4 md:py-2 font-semibold">
+          Education
+        </h2>
         <div className="flex flex-row gap-2 justify-between items-center">
           <span className="flex py-2 flex-row gap-2 sm:gap-4 justify-center items-center">
             <Image
@@ -139,7 +141,9 @@ export default function Home() {
         viewport={{ once: true, margin: "-50px" }}
         variants={blurReveal}
       >
-        <h2 className="text-base sm:text-lg py-2 font-semibold">Experience</h2>
+        <h2 className="text-base sm:text-lg py-4 md:py-2 font-semibold">
+          Experience
+        </h2>
         <Experience />
       </motion.div>
 
@@ -167,7 +171,9 @@ export default function Home() {
         viewport={{ once: true, margin: "-50px" }}
         variants={blurReveal}
       >
-        <h2 className="text-base sm:text-lg py-2 font-semibold">Skills</h2>
+        <h2 className="text-base sm:text-lg py-2 font-semibold">
+          Skills
+        </h2>
         <div className="flex flex-row gap-2 items-center">
           <Frontend />
         </div>
