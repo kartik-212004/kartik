@@ -1,3 +1,12 @@
+import React from 'react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./ui/accordion";
+import { motion } from "framer-motion";
+
 const frontend = [
   {
     name: "React",
@@ -67,14 +76,6 @@ const backend = [
   },
 ];
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
-import { motion } from "motion/react";
-
 export function Frontend() {
   return (
     <div className="flex flex-row gap-2 items-center">
@@ -103,12 +104,25 @@ export function Frontend() {
           <AccordionContent className="text-xs sm:text-sm md:text-md">
             <div className="flex flex-wrap gap-1 sm:gap-2">
               {frontend.map((skill, i) => (
-                <p
+                <motion.p
                   key={i}
+                  initial={{
+                    opacity: 0.1,
+                    scale: 0.3,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: Math.random() * 2,
+                    ease: "easeOut",
+                  }}
                   className="text-xs sm:text-sm text-black flex flex-row gap-1 sm:gap-2 dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
                 >
                   {skill.name}
-                </p>
+                </motion.p>
               ))}
             </div>
           </AccordionContent>
@@ -140,12 +154,25 @@ export function Backend() {
           <AccordionContent className="text-xs sm:text-sm md:text-md">
             <div className="flex flex-wrap gap-1 sm:gap-2">
               {backend.map((skill, i) => (
-                <p
+                <motion.p
                   key={i}
+                  initial={{
+                    opacity: 0.1,
+                    scale: 0.3,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    delay: Math.random() * 2,
+                    ease: "easeOut",
+                  }}
                   className="text-xs sm:text-sm text-black flex flex-row gap-1 sm:gap-2 dark:bg-primary2 px-1 sm:px-2 py-0.5 sm:py-1 rounded-md"
                 >
                   {skill.name}
-                </p>
+                </motion.p>
               ))}
             </div>
           </AccordionContent>
