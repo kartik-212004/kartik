@@ -1,7 +1,7 @@
 "use client";
 import { projects } from "./info/objects";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const blurReveal = {
   hidden: { opacity: 0, y: 50, filter: "blur(8px)" },
