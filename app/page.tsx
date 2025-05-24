@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
+import Project from "@/components/projects";
 
 const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
   ssr: false,
@@ -55,51 +56,62 @@ export default function Home() {
 
   return (
     <motion.main className="flex flex-col space-y-4">
-      <div className="relative py-3 px-1 rounded-sm overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-center bg-[url('/backgroundImageLight.png')] brightness-[140%] contrast-75 bg-no-repeat bg-cover z-0"
-          initial={{ opacity: theme === "light" ? 1 : 0 }}
-          animate={{
-            opacity: theme === "light" ? 1 : 0,
-            scale: theme === "light" ? 1 : 1.1,
-          }}
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-        />
+      <div className="flex flex-row gap-x-3">
+        <div className="relative w-full py-3 px-1 rounded-sm overflow-hidden">
+          <motion.div
+            className="absolute inset-0 bg-center bg-[url('/backgroundImageLight.png')] brightness-[140%] contrast-75 bg-no-repeat bg-cover z-0"
+            initial={{ opacity: theme === "light" ? 1 : 0 }}
+            animate={{
+              opacity: theme === "light" ? 1 : 0,
+              scale: theme === "light" ? 1 : 1.1,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+          />
 
-        <motion.div
-          className="absolute inset-0 bg-center  bg-[url('/backgroundImage.png')] bg-no-repeat bg-cover brightness-75 contrast-[103%] z-0"
-          initial={{ opacity: theme === "dark" ? 1 : 0 }}
-          animate={{
-            opacity: theme === "dark" ? 1 : 0,
-            scale: theme === "dark" ? 1 : 1.1,
-          }}
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-        />
+          <motion.div
+            className="absolute inset-0 bg-center  bg-[url('/backgroundImage.png')] bg-no-repeat bg-cover brightness-75 contrast-[103%] z-0"
+            initial={{ opacity: theme === "dark" ? 1 : 0 }}
+            animate={{
+              opacity: theme === "dark" ? 1 : 0,
+              scale: theme === "dark" ? 1 : 1.1,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+          />
 
-        <div className="relative z-10">
-          <motion.h1
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1 }}
-            className="text-3xl sm:text-4xl md:text-h2 text-black dark:dark:text-white font-bold"
-          >
-            Kartik Bhatt
-          </motion.h1>
+          <div className="relative z-10">
+            <motion.h1
+              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 1 }}
+              className="text-3xl sm:text-4xl md:text-h2 text-black dark:dark:text-white font-bold"
+            >
+              Kartik Bhatt
+            </motion.h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.8 }}
-            className="text-base sm:text-lg py-1 font-medium dark:text-text1 text-gray-800"
-          >
-            I write bugs and call them features.
-          </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.8 }}
+              className="text-base sm:text-lg py-1 font-medium dark:text-text1 text-gray-800"
+            >
+              I write bugs and call them features.
+            </motion.h2>
+          </div>
+        </div>{" "}
+        <div className="sm:block hidden">
+          <Image
+            src="/profile.png"
+            height={100}
+            width={100}
+            alt="Profile"
+            className="object-cover h-24 rounded-sm"
+          />
         </div>
       </div>
 
@@ -187,7 +199,6 @@ export default function Home() {
             <GitHubCalendar
               username="kartik-212004"
               fontSize={calendarFontSize}
-              colorScheme={theme === "dark" ? "dark" : "light"}
               theme={{
                 light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
                 dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
@@ -227,6 +238,10 @@ export default function Home() {
         }}
         className="w-16 sm:w-20 h-1 mx-auto bg-white rounded-full"
       ></motion.div>
+      <h2 className="text-base sm:text-lg py-4 md:py-2 font-semibold">
+        Projects
+      </h2>
+      <Project />
     </motion.main>
   );
 }
