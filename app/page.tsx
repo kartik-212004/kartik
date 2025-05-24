@@ -7,6 +7,7 @@ import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import Project from "@/components/projects";
+// import Contact from "@/components/Contact";
 
 const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
   ssr: false,
@@ -199,6 +200,7 @@ export default function Home() {
             <GitHubCalendar
               username="kartik-212004"
               fontSize={calendarFontSize}
+              colorScheme={theme === "dark" ? "dark" : "light"}
               theme={{
                 light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
                 dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
