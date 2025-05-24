@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <motion.main className="flex flex-col space-y-4">
       <div className="relative py-3 px-1 rounded-sm overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/image2.png')] bg-center brightness-75 contrast-[103%] bg-no-repeat bg-cover z-0" />
+        <div className="absolute inset-0 bg-[url('/backgroundImage.png')] bg-center brightness-75 contrast-[103%] bg-no-repeat bg-cover z-0" />
 
         <div className="relative z-10">
           <motion.h1
@@ -171,9 +171,7 @@ export default function Home() {
         viewport={{ once: true, margin: "-50px" }}
         variants={blurReveal}
       >
-        <h2 className="text-base sm:text-lg py-2 font-semibold">
-          Skills
-        </h2>
+        <h2 className="text-base sm:text-lg py-2 font-semibold">Skills</h2>
         <div className="flex flex-row gap-2 items-center">
           <Frontend />
         </div>
