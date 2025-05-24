@@ -35,13 +35,13 @@ export default function Project() {
               className="object-cover rounded-md"
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold text-black dark:text-white">
+          <h3 className="text-sm sm:text-base font-semibold text-black dark:text-white">
             {project.name}
           </h3>
-          <p className="text-xs sm:text-sm text-gray-700 dark:text-text1 py-1">
+          <p className="text-xs sm:text-sm md:text-md text-gray-700 dark:text-text1 py-1">
             {project.techStack}
           </p>
-          <p className="text-sm text-gray-800 dark:text-text1 py-1 flex-grow">
+          <p className="text-xs sm:text-sm md:text-md text-gray-800 dark:text-text1 py-1 flex-grow">
             {project.description}
           </p>
           <div className="flex gap-3 pt-4 mt-auto">
@@ -54,12 +54,12 @@ export default function Project() {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm  dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
+                className="px-4 py-2 text-xs sm:text-sm dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
               >
                 Live Demo
               </a>
             ) : (
-              <span className="px-4 py-2 text-sm bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 rounded-md cursor-not-allowed">
+              <span className="px-4 py-2 text-xs sm:text-sm bg-gray-100 dark:bg-[#121618] text-gray-500 dark:text-gray-400 rounded-md cursor-not-allowed">
                 Live Demo Not Available
               </span>
             )}
@@ -67,7 +67,7 @@ export default function Project() {
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm  dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
+              className="px-4 py-2 text-xs sm:text-sm  dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
             >
               GitHub
             </a>
