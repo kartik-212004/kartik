@@ -107,15 +107,6 @@ export const projects = [
     repo: "https://github.com/kartik-212004/GetMeABeer",
   },
   {
-    name: "Blog Application",
-    techStack: "React / TypeScript / Shadcn Ui / Tailwind Css ",
-    description:
-      "A responsive blog application that allows users to create, view, edit, and delete posts!",
-    image: Headerblog,
-    live: "https://headerblog.netlify.app/",
-    repo: "https://github.com/kartik-212004/Blog",
-  },
-  {
     name: "Face Recognition Surveillance System",
     techStack:
       "React / TypeScript / Shadcn Ui / Tailwind Css / Python / Flask / OpenCv / Docker",
@@ -124,6 +115,15 @@ export const projects = [
     image: Hackathon,
     live: null,
     repo: "https://github.com/kartik-212004/hackathon-iiit",
+  },
+  {
+    name: "Blog Application",
+    techStack: "React / TypeScript / Shadcn Ui / Tailwind Css ",
+    description:
+      "A responsive blog application that allows users to create, view, edit, and delete posts!",
+    image: Headerblog,
+    live: "https://headerblog.netlify.app/",
+    repo: "https://github.com/kartik-212004/Blog",
   },
   {
     name: "Your Workout ",

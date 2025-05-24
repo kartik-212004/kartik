@@ -54,7 +54,7 @@ export default function Project() {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+                className="px-4 py-2 text-sm  dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
               >
                 Live Demo
               </a>
@@ -67,7 +67,7 @@ export default function Project() {
               href={project.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+              className="px-4 py-2 text-sm  dark:bg-[#121618] text-black dark:text-white rounded-md hover:bg-gray-300 dark:hover:bg-[#161a1d] transition-colors duration-200"
             >
               GitHub
             </a>
