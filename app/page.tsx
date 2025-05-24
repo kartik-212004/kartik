@@ -7,7 +7,7 @@ import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import Project from "@/components/projects";
-// import Contact from "@/components/Contact";
+import Contact from "@/components/Contact";
 
 const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
   ssr: false,
@@ -133,11 +133,14 @@ export default function Home() {
           <span className="dark:text-white text-black font-mono font-semibold">
             #BuildInPublic
           </span>
-          . I also shitpost and binge planes on Flightradar24.{" "}
-          <span className="dark:text-white text-black font-mono font-semibold">
+          I also enjoy shitposting and tracking planes on Flightradar24.{" "}
+          Interested in working together?{" "}
+          <a
+            href="#contact"
+            className="dark:text-white text-black font-mono font-semibold underline"
+          >
             Contact Me
-          </span>{" "}
-          for freelance work!
+          </a>
         </p>
       </motion.div>
 
@@ -244,6 +247,7 @@ export default function Home() {
         Projects
       </h2>
       <Project />
+      <Contact />
     </motion.main>
   );
 }
