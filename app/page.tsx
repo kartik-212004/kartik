@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import { Backend, Frontend } from "@/components/Skills";
 import { useEffect, useState, useRef } from "react";
+import { useTheme } from "next-themes";
 
 const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
   ssr: false,
@@ -30,6 +31,7 @@ const blurReveal = {
 export default function Home() {
   const [calendarFontSize, setCalendarFontSize] = useState(12);
   const [isMounted, setIsMounted] = useState(false);
+  const { theme } = useTheme();
 
   const introRef = useRef(null);
   const educationRef = useRef(null);
@@ -54,14 +56,38 @@ export default function Home() {
   return (
     <motion.main className="flex flex-col space-y-4">
       <div className="relative py-3 px-1 rounded-sm overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/backgroundImage.png')] bg-center brightness-75 contrast-[103%] bg-no-repeat bg-cover z-0" />
+        <motion.div
+          className="absolute inset-0 bg-center bg-[url('/backgroundImageLight.png')] brightness-[140%] contrast-75 bg-no-repeat bg-cover z-0"
+          initial={{ opacity: theme === "light" ? 1 : 0 }}
+          animate={{
+            opacity: theme === "light" ? 1 : 0,
+            scale: theme === "light" ? 1 : 1.1,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+        />
+
+        <motion.div
+          className="absolute inset-0 bg-center  bg-[url('/backgroundImage.png')] bg-no-repeat bg-cover brightness-75 contrast-[103%] z-0"
+          initial={{ opacity: theme === "dark" ? 1 : 0 }}
+          animate={{
+            opacity: theme === "dark" ? 1 : 0,
+            scale: theme === "dark" ? 1 : 1.1,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+        />
 
         <div className="relative z-10">
           <motion.h1
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1 }}
-            className="text-3xl sm:text-4xl md:text-h2 font-bold"
+            className="text-3xl sm:text-4xl md:text-h2 text-black dark:dark:text-white font-bold"
           >
             Kartik Bhatt
           </motion.h1>
@@ -70,7 +96,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.8 }}
-            className="text-base sm:text-lg py-1 font-medium dark:text-text1 text-text2"
+            className="text-base sm:text-lg py-1 font-medium dark:text-text1 text-gray-800"
           >
             I write bugs and call them features.
           </motion.h2>
@@ -87,15 +113,17 @@ export default function Home() {
         <h2 className="text-base sm:text-lg py-3 md:py-1 font-semibold">
           Who Am I ?
         </h2>
-        <p className="text-sm sm:text-base md:text-h4 leading-6 sm:leading-7 tracking-wide sm:tracking-widest dark:text-text1 text-text2">
-          I’m Kartik Bhatt, a student from Dehradun who loves building with
-          code. I’ve done 5+ hackathons, shipped freelance projects, and believe
-          in{" "}
-          <span className="text-white font-mono font-semibold">
+        <p className="text-sm sm:text-base md:text-h4 leading-6 sm:leading-7 tracking-wide sm:tracking-widest text-black dark:text-text1">
+          I&apos;m Kartik Bhatt, a student from Dehradun who loves building with
+          code. I&apos;ve done 5+ hackathons, shipped freelance projects, and
+          believe in{" "}
+          <span className="dark:text-white text-black font-mono font-semibold">
             #BuildInPublic
           </span>
           . I also shitpost and binge planes on Flightradar24.{" "}
-          <span className="text-white font-mono font-semibold">Contact Me</span>{" "}
+          <span className="dark:text-white text-black font-mono font-semibold">
+            Contact Me
+          </span>{" "}
           for freelance work!
         </p>
       </motion.div>
@@ -128,7 +156,7 @@ export default function Home() {
               </p>
             </div>
           </span>
-          <p className="text-xs sm:text-sm italic dark:text-text1 text-text2">
+          <p className="text-xs sm:text-sm italic dark:text-text1 text-black">
             2023 - 2027
           </p>
         </div>
@@ -159,6 +187,11 @@ export default function Home() {
             <GitHubCalendar
               username="kartik-212004"
               fontSize={calendarFontSize}
+              colorScheme={theme === "dark" ? "dark" : "light"}
+              theme={{
+                light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
+                dark: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"],
+              }}
             />
           )}
         </div>
