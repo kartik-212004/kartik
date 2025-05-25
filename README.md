@@ -1,1 +1,1 @@
-This ain’t your typical portfolio.
+this ain’t your typical portfolio.
