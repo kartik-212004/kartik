@@ -21,7 +21,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div id="contact" className="w-full">
+    <div id="contact" className="w-full mb-10">
       <div className="mb-8">
         <h1 className="text-base sm:text-lg font-semibold text-white mb-4">
           Get in Touch
