@@ -1,5 +1,5 @@
 "use client";
-
+import resume from "/resume.pdf";
 import {
   // FileBoxIcon,
   CalendarIcon,
