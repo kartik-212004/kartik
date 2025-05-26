@@ -1,5 +1,4 @@
 "use client";
-import resume from "/resume.pdf";
 import {
   // FileBoxIcon,
   CalendarIcon,
@@ -129,7 +128,7 @@ const DATA = {
       },
       Resume: {
         name: "Resume",
-        url: "/resume.pdf",
+        url: "https://drive.google.com/file/d/1NobSmi8SM1is5tgtnQTDVgfTLJXeeBSt/view?usp=sharing",
         icon: Icons.resume,
       },
       X: {
