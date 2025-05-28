@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -8,30 +10,23 @@ import { motion } from "motion/react";
 
 export default function ExperienceAccordion() {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="multiple" className="w-full">
       <AccordionItem value="softtech">
         <AccordionTrigger>
           <motion.p
             className="text-sm sm:text-base"
             whileHover={{
               x: [0, -2, 2, -2, 2, 0],
-              transition: {
-                duration: 0.3,
-                repeat: 1,
-                repeatType: "loop",
-              },
+              transition: { duration: 0.3, repeat: 1, repeatType: "loop" },
             }}
           >
-            SoftTech Bengaluru – Web gird
+            SoftTech Bengaluru – Web Grid
           </motion.p>
         </AccordionTrigger>
         <AccordionContent className="text-xs sm:text-sm md:text-md">
-          <p>
-            <strong>Tech Stack:</strong> Next.js, Turborepo, Tailwind CSS,
-            React, Docker, Shadcn UI. <br />I built the homepage with animations
-            and improved the UI. I worked closely with experienced devs, learned
-            to manage PRs, resolve merge conflicts, and use Git branches. It
-            really improved my version control and teamwork skills.
+          <p className="whitespace-nowrap">
+            Built animated homepage UI and improved Git skills via PRs and
+            branching.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -42,21 +37,15 @@ export default function ExperienceAccordion() {
             className="text-sm sm:text-base"
             whileHover={{
               x: [0, -2, 2, -2, 2, 0],
-              transition: {
-                duration: 0.3,
-                repeat: 1,
-                repeatType: "loop",
-              },
+              transition: { duration: 0.3, repeat: 1, repeatType: "loop" },
             }}
           >
-            Coffee-Web-SaaS – Freelance Project
+            Coffee-Web-SaaS – Freelance
           </motion.p>
         </AccordionTrigger>
         <AccordionContent className="text-xs sm:text-sm md:text-md">
-          <p>
-            <strong>Tech Stack:</strong> React, MERN Stack, Stripe, Shadcn UI.{" "}
-            <br />I built a Stripe-based subscription model, used webhooks, and
-            connected everything to a NoSQL database.
+          <p className="whitespace-nowrap">
+            Built Stripe subscriptions and connected backend with NoSQL DB.
           </p>
         </AccordionContent>
       </AccordionItem>
@@ -67,21 +56,15 @@ export default function ExperienceAccordion() {
             className="text-sm sm:text-base"
             whileHover={{
               x: [0, -2, 2, -2, 2, 0],
-              transition: {
-                duration: 0.3,
-                repeat: 1,
-                repeatType: "loop",
-              },
+              transition: { duration: 0.3, repeat: 1, repeatType: "loop" },
             }}
           >
             Hacktoberfest 2024 – Open Source
           </motion.p>
         </AccordionTrigger>
         <AccordionContent className="text-xs sm:text-sm md:text-md">
-          <p>
-            I contributed to 5 open source repositories by fixing bugs and
-            adding features. It helped me sharpen my Git and GitHub skills, and
-            taught me how to collaborate effectively on shared codebases.
+          <p className="whitespace-nowrap">
+            Contributed to OSS, fixed bugs, and improved Git/GitHub workflows.
           </p>
         </AccordionContent>
       </AccordionItem>

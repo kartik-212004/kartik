@@ -57,10 +57,10 @@ export default function ContactForm() {
   return (
     <div id="contact" className="w-full mb-10">
       <div className="mb-8">
-        <h1 className="text-base sm:text-lg font-semibold text-white mb-4">
+        <h1 className="text-base sm:text-lg font-semibold dark:text-white mb-4">
           Get in Touch
         </h1>
-        <p className="text-xs sm:text-sm text-gray-400">
+        <p className="text-xs sm:text-sm dark:text-gray-400">
           Looking to hire a full-stack developer or have any other inquiries?
           Feel free to get in touch.
         </p>
@@ -71,8 +71,8 @@ export default function ContactForm() {
         <div
           className={`mb-4 p-3 rounded-sm text-sm ${
             status.type === "success"
-              ? "bg-green-900/20 border border-green-700 text-green-300"
-              : "bg-red-900/20 border border-red-700 text-red-300"
+              ? "bg-green-600/20 border text-green-700"
+              : "bg-red-600/20 border text-red-700"
           }`}
         >
           {status.message}
@@ -87,7 +87,7 @@ export default function ContactForm() {
               name="name"
               placeholder="Full Name *"
               onChange={(e) => setdata({ ...data, name: e.target.value })}
-              className="w-full px-4 py-3 bg-transparent border border-border dark:border-borderDark rounded-sm text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 transition-colors duration-200 text-sm"
+              className="w-full px-4 py-3 placeholder:dark:text-gray-300 bg-transparent border border-border dark:border-borderDark rounded-sm dark:text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 transition-colors duration-200 text-sm"
               disabled={isSubmitting}
             />
           </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
               name="email"
               placeholder="Email *"
               onChange={(e) => setdata({ ...data, email: e.target.value })}
-              className="w-full px-4 py-3 bg-transparent border border-border dark:border-borderDark rounded-sm text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 transition-colors duration-200 text-sm"
+              className="w-full px-4 py-3 bg-transparent border border-border dark:border-borderDark rounded-sm dark:text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 transition-colors duration-200 text-sm"
               disabled={isSubmitting}
             />
           </div>
@@ -109,7 +109,7 @@ export default function ContactForm() {
             placeholder="Message *"
             rows={6}
             onChange={(e) => setdata({ ...data, message: e.target.value })}
-            className="w-full px-4 py-3 bg-transparent border border-border dark:border-borderDark rounded-sm text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 resize-none transition-colors duration-200 text-sm"
+            className="w-full px-4 py-3 bg-transparent border border-border dark:border-borderDark rounded-sm dark:text-gray-300 placeholder-gray-400 focus:outline-none focus:border-gray-400 resize-none transition-colors duration-200 text-sm"
             disabled={isSubmitting}
           />
         </div>
@@ -120,7 +120,7 @@ export default function ContactForm() {
           className={`w-full py-3 font-medium rounded-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 text-sm disabled:opacity-50 disabled:cursor-not-allowed ${
             status.type === "success"
               ? "bg-green-500 text-white hover:bg-green-600"
-              : "bg-white text-black hover:bg-gray-100"
+              : "text-black hover:bg-gray-300 bg-gray-200"
           }`}
         >
           {isSubmitting
