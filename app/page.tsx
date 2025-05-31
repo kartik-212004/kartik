@@ -57,9 +57,18 @@ export default function Home() {
 
   return (
     <motion.main className="flex flex-col space-y-4">
-      <div className="flex flex-row gap-x-3">
+      <div className="flex flex-row gap-x-7">
+        <div className="sm:block hidden">
+          <Image
+            src="/profile.png"
+            height={100}
+            width={100}
+            alt="Profile"
+            className="object-cover rounded-sm"
+          />
+        </div>
         <div className="relative w-full py-3 px-1 rounded-sm overflow-hidden">
-          <motion.div
+          {/* <motion.div
             className="absolute inset-0 bg-center bg-[url('/backgroundImageLight.png')] brightness-[140%] contrast-75 bg-no-repeat bg-cover z-0"
             initial={{ opacity: theme === "light" ? 1 : 0 }}
             animate={{
@@ -83,7 +92,7 @@ export default function Home() {
               duration: 0.8,
               ease: "easeInOut",
             }}
-          />
+          /> */}
 
           <div className="relative z-10">
             <motion.h1
@@ -105,15 +114,6 @@ export default function Home() {
             </motion.h2>
           </div>
         </div>{" "}
-        <div className="sm:block hidden">
-          <Image
-            src="/profile.png"
-            height={100}
-            width={100}
-            alt="Profile"
-            className="object-cover h-24 rounded-sm"
-          />
-        </div>
       </div>
 
       <motion.div
